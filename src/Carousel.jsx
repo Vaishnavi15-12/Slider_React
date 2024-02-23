@@ -28,9 +28,12 @@ const Carousel = () => {
     }
 
     useEffect(() => {
-        setInterval(() => {
+        let sliderID = setInterval(() => {
             nextSlide();
         }, 2000);
+        return () => {
+            clearInterval(sliderID);
+        }
     },[currentPerson])
 
 
